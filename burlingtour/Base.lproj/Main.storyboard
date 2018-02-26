@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <tableViewController id="Zsq-Jy-u65" customClass="SightsViewController" customModule="burlingtour" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sJM-YZ-Odq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -65,7 +65,7 @@
             <objects>
                 <viewController id="Ed4-At-ukw" customClass="SightDetail" customModule="burlingtour" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NL1-Lw-bOe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8r-bc-WoY">
@@ -77,10 +77,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IzB-al-CH1">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IzB-al-CH1">
                                 <rect key="frame" x="16" y="93" width="288" height="95"/>
                             </mapView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fj0-cl-4IE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fj0-cl-4IE">
                                 <rect key="frame" x="85" y="207" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="vyx-zm-3Qn"/>
@@ -152,7 +152,7 @@
             <objects>
                 <tableViewController id="ngn-u4-6yr" customClass="ToursViewController" customModule="burlingtour" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mjC-Yc-SqM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -184,18 +184,36 @@
             <objects>
                 <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="AWz-bK-dja" customClass="NotesController" customModule="burlingtour" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EgK-ul-Bew">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2Bi-vq-VXD" customClass="NoteCell" customModule="burlingtour" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" id="2Bi-vq-VXD" customClass="NoteCell" customModule="burlingtour" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Bi-vq-VXD" id="eBy-vU-EAs">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5w-5l-1f7">
+                                            <rect key="frame" x="16" y="0.0" width="288" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPT-lv-jnY">
+                                            <rect key="frame" x="16" y="22" width="288" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="content" destination="YPT-lv-jnY" id="RYo-b5-eRd"/>
+                                    <outlet property="name" destination="r5w-5l-1f7" id="8ik-vm-tJn"/>
                                     <segue destination="Ru8-3R-gpb" kind="show" id="HUa-X7-dcj"/>
                                 </connections>
                             </tableViewCell>
@@ -215,14 +233,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJR-lp-gJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1573" y="410"/>
+            <point key="canvasLocation" x="1571.25" y="409.85915492957747"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Yvy-qq-IDt">
             <objects>
                 <viewController id="KPc-Kb-sQ1" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tg1-Bv-lJw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ETB-95-1u5"/>
@@ -237,52 +255,68 @@
             <objects>
                 <viewController id="Ru8-3R-gpb" customClass="NoteDetail" customModule="burlingtour" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dnr-l9-3Ov">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Lo-hj-rDn">
-                                <rect key="frame" x="16" y="87" width="288" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Lo-hj-rDn">
+                                <rect key="frame" x="113" y="87" width="94" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note Content" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6U9-A3-UvQ">
-                                <rect key="frame" x="16" y="125" width="288" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note Content" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6U9-A3-UvQ">
+                                <rect key="frame" x="106.5" y="125" width="107" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ydc-5h-e7T">
-                                <rect key="frame" x="40" y="176" width="240" height="143"/>
+                                <rect key="frame" x="40" y="220" width="240" height="143"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="8P6-FB-XkP"/>
                                     <constraint firstAttribute="height" constant="143" id="ofY-n8-0yI"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ei-ti-bVa">
-                                <rect key="frame" x="40" y="327" width="240" height="42"/>
+                                <rect key="frame" x="83.5" y="371" width="153" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Choose Photo"/>
                                 <connections>
                                     <action selector="selectPhoto:" destination="Ru8-3R-gpb" eventType="touchUpInside" id="vKL-C6-0BA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8c-G7-E4q">
+                                <rect key="frame" x="110" y="407" width="100" height="30"/>
+                                <state key="normal" title="Remove Photo"/>
+                                <connections>
+                                    <action selector="removePhoto:" destination="Ru8-3R-gpb" eventType="touchUpInside" id="XsW-FO-eii"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjC-A3-7Wo">
+                                <rect key="frame" x="125" y="477" width="70" height="30"/>
+                                <state key="normal" title="Save Note">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveNote:" destination="Ru8-3R-gpb" eventType="touchUpInside" id="rJb-Is-1lk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="kvP-rq-mh9" firstAttribute="bottom" secondItem="GjC-A3-7Wo" secondAttribute="bottom" constant="12" id="4lu-qn-j5q"/>
                             <constraint firstItem="6U9-A3-UvQ" firstAttribute="top" secondItem="2Lo-hj-rDn" secondAttribute="bottom" constant="8" id="7VD-yx-4um"/>
+                            <constraint firstItem="X8c-G7-E4q" firstAttribute="centerX" secondItem="kvP-rq-mh9" secondAttribute="centerX" id="7a8-YN-uXN"/>
                             <constraint firstItem="ydc-5h-e7T" firstAttribute="centerX" secondItem="kvP-rq-mh9" secondAttribute="centerX" id="8cb-sc-Hp1"/>
-                            <constraint firstItem="4Ei-ti-bVa" firstAttribute="leading" secondItem="kvP-rq-mh9" secondAttribute="leading" constant="40" id="A5e-fS-Oqj"/>
-                            <constraint firstItem="6U9-A3-UvQ" firstAttribute="leading" secondItem="kvP-rq-mh9" secondAttribute="leading" constant="16" id="Pxc-9c-vOS"/>
                             <constraint firstItem="2Lo-hj-rDn" firstAttribute="top" secondItem="kvP-rq-mh9" secondAttribute="top" constant="23" id="Rdp-Vd-AG1"/>
                             <constraint firstItem="ydc-5h-e7T" firstAttribute="centerY" secondItem="kvP-rq-mh9" secondAttribute="centerY" id="Zzu-GP-K8k"/>
-                            <constraint firstItem="2Lo-hj-rDn" firstAttribute="leading" secondItem="kvP-rq-mh9" secondAttribute="leading" constant="16" id="a5c-cC-tpO"/>
                             <constraint firstItem="6U9-A3-UvQ" firstAttribute="centerX" secondItem="kvP-rq-mh9" secondAttribute="centerX" id="bwO-Di-VA7"/>
-                            <constraint firstItem="ydc-5h-e7T" firstAttribute="leading" secondItem="kvP-rq-mh9" secondAttribute="leading" constant="40" id="h9y-fF-hsX"/>
+                            <constraint firstItem="GjC-A3-7Wo" firstAttribute="centerX" secondItem="kvP-rq-mh9" secondAttribute="centerX" id="hZO-mX-70c"/>
                             <constraint firstItem="4Ei-ti-bVa" firstAttribute="centerX" secondItem="kvP-rq-mh9" secondAttribute="centerX" id="jLA-gi-1Xu"/>
                             <constraint firstItem="2Lo-hj-rDn" firstAttribute="centerX" secondItem="kvP-rq-mh9" secondAttribute="centerX" id="kaN-b9-1J8"/>
                             <constraint firstItem="4Ei-ti-bVa" firstAttribute="top" secondItem="ydc-5h-e7T" secondAttribute="bottom" constant="8" id="q0M-XL-qZt"/>
                             <constraint firstItem="ydc-5h-e7T" firstAttribute="top" secondItem="6U9-A3-UvQ" secondAttribute="bottom" constant="21" id="quW-d6-C0R"/>
+                            <constraint firstItem="X8c-G7-E4q" firstAttribute="top" secondItem="4Ei-ti-bVa" secondAttribute="bottom" constant="-6" id="uGA-jv-fbG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kvP-rq-mh9"/>
                     </view>
@@ -290,6 +324,7 @@
                         <outlet property="contentInput" destination="6U9-A3-UvQ" id="aaD-aB-yaF"/>
                         <outlet property="nameInput" destination="2Lo-hj-rDn" id="LdE-TJ-RPR"/>
                         <outlet property="noteImage" destination="ydc-5h-e7T" id="TJW-KU-xJW"/>
+                        <outlet property="removePhoto" destination="X8c-G7-E4q" id="L74-89-k8F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cn3-Lv-e9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -319,7 +354,7 @@
             <objects>
                 <tableViewController id="8CR-7B-80u" customClass="FavoritesController" customModule="burlingtour" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SP8-ti-CYO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -351,7 +386,7 @@
             <objects>
                 <viewController id="v7g-T5-Q5j" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yNk-Nq-uru">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="KhN-GF-Cd4"/>
@@ -383,7 +418,7 @@
             <objects>
                 <tableViewController id="ebF-DK-E8R" customClass="LinksController" customModule="burlingtour" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0vP-BY-PT3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -436,17 +471,17 @@
             <objects>
                 <viewController id="bt9-CQ-Uka" customClass="CreditsController" customModule="burlingtour" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qsY-zQ-7RL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chris Bendel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xb0-tK-SV8">
-                                <rect key="frame" x="111" y="237" width="98" height="21"/>
+                                <rect key="frame" x="111" y="281" width="98" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burlingtour 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWe-8c-sgT">
-                                <rect key="frame" x="96" y="266" width="128" height="21"/>
+                                <rect key="frame" x="96" y="310" width="128" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
