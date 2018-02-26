@@ -9,7 +9,8 @@
 import UIKit
 
 class TourDetail: UIViewController {
-
+    var tour: Tour!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

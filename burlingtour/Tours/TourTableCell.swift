@@ -9,7 +9,9 @@
 import UIKit
 
 class TourTableCell: UITableViewCell {
-
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var desc: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

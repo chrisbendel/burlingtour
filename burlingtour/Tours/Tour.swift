@@ -1,18 +1,23 @@
 import Foundation
 
-class Tour {
+class Tour: NSObject, NSCoding {
     var name: String
-    var description: String
-    var image: String
-    var lat: Double
-    var lng: Double
+    var desc: String
     
-    init(name: String, description: String, image: String, lat: Double, lng: Double) {
-        self.name = name
-        self.description = description
-        self.image = image
-        self.lat = lat
-        self.lng = lng
+    func encode(with coder: NSCoder) {
+        coder.encode(self.name, forKey: "name")
+        coder.encode(self.desc, forKey: "desc")
     }
+    
+    init(name: String, desc: String) {
+        self.name = name
+        self.desc = desc
+    }
+    
+    required init?(coder decoder: NSCoder) {
+        self.name = decoder.decodeObject(forKey: "name") as? String ?? ""
+        self.desc = decoder.decodeObject(forKey: "desc") as? String ?? ""
+    }
+    
+    
 }
-

@@ -2,11 +2,9 @@ import UIKit
 
 class ToursViewController: UITableViewController {
     
-    let sights = [
-        Sight(name: "Zero Gravity", description: "Craft Brewery", image: "zerog", lat: 44.45962100000001, lng: -73.21380299999998),
-        Sight(name: "Switchback", description: "Craft Brewery", image: "switchback", lat: 44.4562079, lng: -73.22073999999998),
-        Sight(name: "Hen of the Wood", description: "Restaurant", image: "hotw", lat: 44.4790471, lng: -73.21736090000002),
-        Sight(name: "Petra Cliffs", description: "Rock Climbing", image: "petra", lat: 44.4523933, lng: -73.2183521)
+    let tours = [
+        Tour(name: "Ghost Tour", desc: "Spooooky Ghost Tour"),
+        Tour(name: "Lake Champlain", desc: "History of Lake Champlain")
     ]
     
     override func viewDidLoad() {
@@ -22,22 +20,22 @@ class ToursViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sights.count
+        return tours.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SightTableCell", for: indexPath) as! SightTableCell
-        let sight = sights[indexPath.row]
-        cell.desc.text = sight.desc
-        cell.name.text = sight.name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TourTableCell", for: indexPath) as! TourTableCell
+        let tour = tours[indexPath.row]
+        cell.desc.text = tour.desc
+        cell.name.text = tour.name
         
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let sightDetail = segue.destination as! SightDetail
+        let tourDetail = segue.destination as! TourDetail
         let indexPath = tableView.indexPathForSelectedRow!
-        sightDetail.sight = sights[indexPath.row]
+        tourDetail.tour = tours[indexPath.row]
     }
     
 }

@@ -1,6 +1,6 @@
 import UIKit
 
-class NoteDetail: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditNote: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var note: Note!
     var favoriteNotes: [Note]!
@@ -32,8 +32,7 @@ class NoteDetail: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveNote))
-        if var notes: [Note] = NSKeyedUnarchiver.unarchiveObject(withFile: self.getFavoritePath()) as? [Note] {
+        if let notes: [Note] = NSKeyedUnarchiver.unarchiveObject(withFile: self.getFavoritePath()) as? [Note] {
             self.favoriteNotes = notes
             if favoriteNotes.first(where: {$0.name == note.name}) != nil {
                 navigationItem.rightBarButtonItem = UIBarButtonItem(title: "UnFavorite", style: .plain, target: self, action: #selector(unfavorite))
@@ -41,23 +40,18 @@ class NoteDetail: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(favorite))
             }
         } else {
-//            self.favoriteNotes = [Note]()
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(favorite))
         }
         
-        if self.note != nil {
-            
-        }
+        self.nameInput.text = self.note.name
+        self.contentInput.text = self.note.desc
+        self.noteImage.image = self.note.image
     }
     
     @objc func favorite() {
-        if self.note != nil {
-            self.favoriteNotes.append(self.note)
-            
-            NSKeyedArchiver.archiveRootObject(self.favoriteNotes, toFile: self.getFavoritePath())
-            self.viewDidLoad()
-
-        }
+        self.favoriteNotes.append(self.note)
+        NSKeyedArchiver.archiveRootObject(self.favoriteNotes, toFile: self.getFavoritePath())
+        self.viewDidLoad()
     }
     
     @objc func unfavorite() {
@@ -72,16 +66,20 @@ class NoteDetail: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     @IBAction func saveNote(_ sender: Any) {
         if var notes: [Note] = NSKeyedUnarchiver.unarchiveObject(withFile: self.getNotesPath()) as? [Note] {
-            notes.append(Note(name: self.nameInput.text!, text: self.contentInput.text!, image: self.noteImage.image))
+            let updatedNoteIndex = notes.index(where: {$0.name == self.note.name})
+            self.note = notes[updatedNoteIndex!]
+            notes[updatedNoteIndex!].name = self.nameInput.text!
+            notes[updatedNoteIndex!].desc = self.contentInput.text!
+            notes[updatedNoteIndex!].image = self.noteImage.image!
+            
             NSKeyedArchiver.archiveRootObject(notes, toFile: self.getNotesPath())
+            self.viewDidLoad()
             _ = navigationController?.popViewController(animated: true)
         }
     }
     
     @IBAction func removePhoto(_ sender: Any) {
-        if self.noteImage != nil {
-            self.noteImage.image = nil
-        }
+        self.noteImage.image = UIImage()
     }
     
     @IBAction func selectPhoto(_ sender: Any) {
@@ -101,15 +99,4 @@ class NoteDetail: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
         dismiss(animated:true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
