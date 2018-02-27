@@ -1,11 +1,13 @@
 import Foundation
 
-class Sight: NSObject, NSCoding {
+class Sight: NSObject, NSCoding, Favorite {
     var name: String
     var desc: String
     var image: String
     var lat: Double
     var lng: Double
+    var type = "sight"
+    var sectionTitle = "Sights"
     
     func encode(with coder: NSCoder) {
         coder.encode(self.name, forKey: "name")
@@ -30,6 +32,4 @@ class Sight: NSObject, NSCoding {
         self.lat = decoder.decodeObject(forKey: "lat") as? Double ?? 0.0
         self.lng = decoder.decodeObject(forKey: "lng") as? Double ?? 0.0
     }
-
-
 }

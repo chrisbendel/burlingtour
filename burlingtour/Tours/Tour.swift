@@ -1,9 +1,12 @@
 import Foundation
 
-class Tour: NSObject, NSCoding {
+class Tour: NSObject, NSCoding, Favorite {
+    
     var name: String
     var desc: String
     var url: String
+    var type = "tour"
+    var sectionTitle = "Tours"
     
     func encode(with coder: NSCoder) {
         coder.encode(self.name, forKey: "name")

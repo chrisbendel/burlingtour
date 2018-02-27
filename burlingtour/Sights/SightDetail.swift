@@ -48,7 +48,7 @@ class SightDetail: UIViewController {
         image.image = UIImage(named: sight.image)
         
         //Map init stuff
-        let location = CLLocationCoordinate2D(latitude: sight.lat,longitude: sight.lng)
+        let location = CLLocationCoordinate2D(latitude: sight.lat, longitude: sight.lng)
         let span = MKCoordinateSpanMake(0.005, 0.005)
         let region = MKCoordinateRegion(center: location, span: span)
         map.setRegion(region, animated: true)
@@ -61,7 +61,6 @@ class SightDetail: UIViewController {
     
     @objc func favorite() {
         self.favoriteSights.append(self.sight)
-        
         NSKeyedArchiver.archiveRootObject(self.favoriteSights, toFile: self.getFavoritePath())
         self.viewDidLoad()
     }

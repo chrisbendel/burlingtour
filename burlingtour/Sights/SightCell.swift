@@ -1,16 +1,19 @@
-//
-//  SightTableCell.swift
-//  burlingtour
-//
-//  Created by Chris Bendel on 2/24/18.
-//  Copyright © 2018 Chris Bendel. All rights reserved.
-//
-
 import UIKit
 
-class SightTableCell: UITableViewCell {
+class SightCell: UITableViewCell  {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var desc: UILabel!
+    
+    var item: Sight? {
+        didSet {
+            guard let item = item else {
+                return
+            }
+            
+            self.name?.text = item.name
+            self.desc?.text = item.desc
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

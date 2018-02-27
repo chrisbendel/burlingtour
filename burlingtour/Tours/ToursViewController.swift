@@ -24,7 +24,7 @@ class ToursViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TourTableCell", for: indexPath) as! TourTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TourCell", for: indexPath) as! TourCell
         let tour = tours[indexPath.row]
         cell.desc.text = tour.desc
         cell.name.text = tour.name

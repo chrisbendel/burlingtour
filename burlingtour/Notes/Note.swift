@@ -1,10 +1,12 @@
 import Foundation
 import UIKit
 
-class Note: NSObject, NSCoding {
+class Note: NSObject, NSCoding, Favorite {
     var name: String
     var desc: String
     var image: UIImage?
+    var type = "note"
+    var sectionTitle = "Notes"
     
     func encode(with coder: NSCoder) {
         coder.encode(self.name, forKey: "name")

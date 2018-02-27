@@ -26,7 +26,7 @@ class SightsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SightTableCell", for: indexPath) as! SightTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SightCell", for: indexPath) as! SightCell
         let sight = sights[indexPath.row]
         cell.desc.text = sight.desc
         cell.name.text = sight.name
