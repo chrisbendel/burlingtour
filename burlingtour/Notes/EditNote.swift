@@ -43,9 +43,11 @@ class EditNote: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(favorite))
         }
         
-        self.nameInput.text = self.note.name
-        self.contentInput.text = self.note.desc
-        self.noteImage.image = self.note.image
+        self.nameInput.text = note.name
+        self.contentInput.text = note.desc
+        self.noteImage.image = note.image
+        
+        self.title = note.name
     }
     
     @objc func favorite() {

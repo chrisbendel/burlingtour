@@ -74,8 +74,10 @@ class NotesController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let editNote = segue.destination as! EditNote
-        let indexPath = tableView.indexPathForSelectedRow!
-        editNote.note = notes[indexPath.row]
+        if (!self.tableView.isEditing) {
+            let editNote = segue.destination as! EditNote
+            let indexPath = tableView.indexPathForSelectedRow!
+            editNote.note = notes[indexPath.row]
+        }
     }
 }

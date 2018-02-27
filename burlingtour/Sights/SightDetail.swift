@@ -40,7 +40,6 @@ class SightDetail: UIViewController {
             }
         } else {
             self.favoriteSights = [Sight]()
-//            NSKeyedArchiver.archiveRootObject([Sight](), toFile: self.getFavoritePath())
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(favorite))
         }
         

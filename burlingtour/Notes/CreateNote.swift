@@ -21,6 +21,7 @@ class CreateNote: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "New Note"
     }
     
     override func didReceiveMemoryWarning() {
