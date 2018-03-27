@@ -129,8 +129,9 @@ class FavoritesController: UITableViewController {
         let indexPath = tableView.indexPathForSelectedRow!
         switch (segue.identifier) {
             case "note"?:
-                let note = segue.destination as! EditNote
+                let note = segue.destination as! NoteDetail
                 note.note = favorites[indexPath.row] as! Note
+                note.editMode = true
             case "sight"?:
                 let sight = segue.destination as! SightDetail
                 sight.sight = favorites[indexPath.row] as! Sight

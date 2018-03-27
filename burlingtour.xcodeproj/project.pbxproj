@@ -26,9 +26,8 @@
 		8360A5AB20423AB5006A157C /* CreditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360A5AA20423AB5006A157C /* CreditsController.swift */; };
 		8360A5AD20431A22006A157C /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360A5AC20431A22006A157C /* FavoritesController.swift */; };
 		8360A5AF20431B06006A157C /* NotesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360A5AE20431B06006A157C /* NotesController.swift */; };
-		8360A5B120431B47006A157C /* EditNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360A5B020431B47006A157C /* EditNote.swift */; };
 		838C61D7204458EC0077B7AB /* TourDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C61D6204458EC0077B7AB /* TourDetail.swift */; };
-		83B0DFD720444F77004614C0 /* CreateNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B0DFD620444F77004614C0 /* CreateNote.swift */; };
+		83B0DFD720444F77004614C0 /* NoteDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B0DFD620444F77004614C0 /* NoteDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,9 +52,8 @@
 		8360A5AA20423AB5006A157C /* CreditsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsController.swift; sourceTree = "<group>"; };
 		8360A5AC20431A22006A157C /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		8360A5AE20431B06006A157C /* NotesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesController.swift; sourceTree = "<group>"; };
-		8360A5B020431B47006A157C /* EditNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNote.swift; sourceTree = "<group>"; };
 		838C61D6204458EC0077B7AB /* TourDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDetail.swift; sourceTree = "<group>"; };
-		83B0DFD620444F77004614C0 /* CreateNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNote.swift; sourceTree = "<group>"; };
+		83B0DFD620444F77004614C0 /* NoteDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +127,7 @@
 			children = (
 				8360A5AE20431B06006A157C /* NotesController.swift */,
 				834A2D6420433CCD00CBD191 /* NoteCell.swift */,
-				8360A5B020431B47006A157C /* EditNote.swift */,
-				83B0DFD620444F77004614C0 /* CreateNote.swift */,
+				83B0DFD620444F77004614C0 /* NoteDetail.swift */,
 				834A2D6620433D3A00CBD191 /* Note.swift */,
 			);
 			path = Notes;
@@ -231,8 +228,7 @@
 				8360A59D20422755006A157C /* TourCell.swift in Sources */,
 				8360A5AD20431A22006A157C /* FavoritesController.swift in Sources */,
 				8360A5A7204230CA006A157C /* Link.swift in Sources */,
-				8360A5B120431B47006A157C /* EditNote.swift in Sources */,
-				83B0DFD720444F77004614C0 /* CreateNote.swift in Sources */,
+				83B0DFD720444F77004614C0 /* NoteDetail.swift in Sources */,
 				8360A5A92042327C006A157C /* LinkTableCell.swift in Sources */,
 				8360A580203CC9D7006A157C /* ToursViewController.swift in Sources */,
 				8360A5992041F2D4006A157C /* SightCell.swift in Sources */,
@@ -383,7 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J7RDJAL6CR;
+				DEVELOPMENT_TEAM = CJYR4ZJ5FC;
 				INFOPLIST_FILE = burlingtour/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chrissbendel.burlingtour;
@@ -398,7 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J7RDJAL6CR;
+				DEVELOPMENT_TEAM = CJYR4ZJ5FC;
 				INFOPLIST_FILE = burlingtour/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chrissbendel.burlingtour;

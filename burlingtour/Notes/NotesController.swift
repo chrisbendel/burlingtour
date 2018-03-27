@@ -36,10 +36,6 @@ class NotesController: UITableViewController {
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -75,9 +71,11 @@ class NotesController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (!self.tableView.isEditing) {
-            let editNote = segue.destination as! EditNote
-            let indexPath = tableView.indexPathForSelectedRow!
-            editNote.note = notes[indexPath.row]
+            if let editNote = segue.destination as? NoteDetail, let indexPath = tableView.indexPathForSelectedRow {
+                print("hey sent!")
+                editNote.note = notes[indexPath.row]
+                editNote.editMode = true
+            }
         }
     }
 }

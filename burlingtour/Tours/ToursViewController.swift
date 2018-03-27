@@ -3,8 +3,8 @@ import UIKit
 class ToursViewController: UITableViewController {
     
     let tours = [
-        Tour(name: "Ghost Tour", desc: "Spooooky Ghost Tour", url: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"),
-        Tour(name: "Lake Champlain", desc: "History of Lake Champlain", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
+        Tour(name: "Ghost Tour", desc: "Spooooky Ghost Tour", emoji:"👻", url: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"),
+        Tour(name: "Lake Champlain", desc: "History of Lake Champlain", emoji: "🌊", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
     ]
     
     override func viewDidLoad() {
@@ -29,6 +29,7 @@ class ToursViewController: UITableViewController {
         let tour = tours[indexPath.row]
         cell.desc.text = tour.desc
         cell.name.text = tour.name
+        cell.emoji.text = tour.emoji
         
         return cell
     }
