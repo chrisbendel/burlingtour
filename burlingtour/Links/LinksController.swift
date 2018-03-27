@@ -2,7 +2,7 @@ import UIKit
 
 class LinksController: UITableViewController {
     
-    let links = [
+    var links = [
         Link(name: "UVM", url: "https://www.uvm.edu/"),
         Link(name: "Champlain", url: "https://www.champlain.edu/"),
         Link(name: "Goddard", url: "https://www.goddard.edu/")
@@ -12,6 +12,35 @@ class LinksController: UITableViewController {
     
     @IBAction func viewCredits(_ sender: Any) {
         
+    }
+    
+    @IBAction func AddLink(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Welcome to My App!", message: "Please tell me your name:", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Save", style: .default, handler: {
+            alert -> Void in
+            let name = alertController.textFields![0] as UITextField
+            let url = alertController.textFields![1] as UITextField
+            
+            if name.text != "", url.text != "" {
+            //TODO: Do something with this data
+                self.links.append(Link(name:name.text!, url:url.text!))
+                self.tableView.reloadData()
+            } else {
+            //TODO: Add error handling
+            }
+        }))
+        //Section 2
+        alertController.addTextField(configurationHandler: { (textField) -> Void in
+            textField.placeholder = "name of site"
+            textField.textAlignment = .center
+        })
+        
+        alertController.addTextField(configurationHandler: { (textField) -> Void in
+            textField.placeholder = "url"
+            textField.textAlignment = .center
+        })
+        self.present(alertController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

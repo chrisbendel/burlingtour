@@ -516,6 +516,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Links" id="Haf-zN-6d4">
                         <barButtonItem key="backBarButtonItem" title="Back" id="nCz-yw-tSG"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="Hqb-IF-FB2">
+                            <connections>
+                                <action selector="AddLink:" destination="ebF-DK-E8R" id="jsf-TU-aRv"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Credits" id="P29-Zx-1mg">
                             <connections>
                                 <action selector="viewCredits:" destination="ebF-DK-E8R" id="7Xl-xW-Nq3"/>
@@ -691,7 +696,7 @@
         <image name="tour" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mpn-Zp-SmW"/>
+        <segue reference="P7H-HU-4Ch"/>
         <segue reference="1iZ-lq-16K"/>
         <segue reference="1lO-Nu-aLP"/>
     </inferredMetricsTieBreakers>
