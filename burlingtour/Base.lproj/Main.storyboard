@@ -506,6 +506,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="name" destination="Dr0-HP-W2X" id="XXf-Gq-S2n"/>
+                                    <segue destination="wwo-XU-zcy" kind="show" id="hZX-Sk-aGD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -536,6 +537,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mh-3m-HnP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="1550"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JfK-y3-8s6">
+            <objects>
+                <viewController id="wwo-XU-zcy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HFd-VD-tbz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7hy-tO-rMF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IS1-Nd-WWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1965"/>
         </scene>
         <!--Credits Controller-->
         <scene sceneID="jwE-ct-yZh">

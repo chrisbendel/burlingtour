@@ -15,7 +15,7 @@ class LinksController: UITableViewController {
     }
     
     @IBAction func AddLink(_ sender: UIBarButtonItem) {
-        let alertController = UIAlertController(title: "Welcome to My App!", message: "Please tell me your name:", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "OK!", message: "Whats the link you want to add:", preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "Save", style: .default, handler: {
             alert -> Void in
@@ -69,8 +69,8 @@ class LinksController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let link = links[indexPath.row]
-        UIApplication.shared.open(URL(string : link.url)!, options: [:], completionHandler: nil)
+//        let link = links[indexPath.row]
+//        UIApplication.shared.open(URL(string : link.url)!, options: [:], completionHandler: nil)
     }
 }
 

@@ -122,7 +122,6 @@ class NoteDetail: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             optionMenu.addAction(deleteAction)
             optionMenu.addAction(saveAction)
             optionMenu.addAction(cancelAction)
-
             self.present(optionMenu, animated: true, completion: nil)
         }
     }
@@ -141,8 +140,10 @@ class NoteDetail: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print("here")
         if let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            print("heee")
+            print("heee \(chosenImage)")
+//            noteImage.isHidden = true
             noteImage.imageView?.image = chosenImage
+            noteImage.imageView?.setNeedsDisplay()
         }
         dismiss(animated:true, completion: nil)
     }
