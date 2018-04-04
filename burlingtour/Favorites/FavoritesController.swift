@@ -44,6 +44,7 @@ class FavoritesController: UITableViewController {
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    //find out where favorites are
     func getFavoritePath(favoritePath: String) -> String {
         var filePath: String {
             let manager = FileManager.default
@@ -54,10 +55,8 @@ class FavoritesController: UITableViewController {
         return filePath
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+    // Table View things!
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -65,7 +64,7 @@ class FavoritesController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favorites.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = favorites[indexPath.row]
         switch(item.type) {
@@ -125,6 +124,8 @@ class FavoritesController: UITableViewController {
         self.tableView.reloadData()
     }
 
+    // Segues
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let indexPath = tableView.indexPathForSelectedRow!
         switch (segue.identifier) {
@@ -141,6 +142,8 @@ class FavoritesController: UITableViewController {
             default: return
         }
     }
+    
+    // Delete things from favorites
     
     private func removeNote(note: Note) {
         var filePath: String {

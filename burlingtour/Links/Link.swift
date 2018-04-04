@@ -1,5 +1,6 @@
 import Foundation
 
+// link is just a key value pair
 class Link {
     var name: String
     var url: String

@@ -36,14 +36,15 @@ class NoteDetail: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         contentInput.layer.borderWidth = 0.5
         contentInput.layer.cornerRadius = 5.0;
         if !editMode {
+            // create mode
             saveButton.isHidden = false
             self.title = "New Note"
         } else {
-            saveButton.isHidden = true
             //editing mode
-            print("editing")
+            saveButton.isHidden = true
+
+            // load the note
             if let notes: [Note] = NSKeyedUnarchiver.unarchiveObject(withFile: self.getFavoritePath()) as? [Note] {
-                print("hello?")
                 self.favoriteNotes = notes
                 if favoriteNotes.first(where: {$0.name == note.name}) != nil {
                     navigationItem.rightBarButtonItem = UIBarButtonItem(title: "UnFavorite", style: .plain, target: self, action: #selector(unfavorite))
@@ -53,25 +54,25 @@ class NoteDetail: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             } else {
                 navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(favorite))
             }
-            print("AAA\(note.name), \(note.desc)")
-            
             self.nameInput.text = note.name
             self.contentInput.text = note.desc
-            self.noteImage.imageView?.image = note.image
-            
+            if (note.image) != nil {
+                photoPicked = true
+                self.noteImage.setImage(note.image, for: UIControlState.normal)
+            } else {
+                photoPicked = false
+                self.noteImage.setImage(UIImage(named: "picture"), for: UIControlState.normal)
+            }
             self.title = note.name
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+
+    // when user presses Done at the bottom of the note detail while !editMode
     @IBAction func saveNote(_ sender: Any) {
         if var notes: [Note] = NSKeyedUnarchiver.unarchiveObject(withFile: self.getNotesPath()) as? [Note] {
-            let photo: UIImage
+            let photo: UIImage?
             if !photoPicked {
-                photo = UIImage()
+                photo = nil
             } else {
                 photo = (noteImage.imageView?.image)!
             }
@@ -85,6 +86,7 @@ class NoteDetail: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         }
     }
     
+    // favorite buttons
     @objc func favorite() {
         self.favoriteNotes.append(self.note)
         NSKeyedArchiver.archiveRootObject(self.favoriteNotes, toFile: self.getFavoritePath())
@@ -97,7 +99,7 @@ class NoteDetail: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         self.viewDidLoad()
     }
     
-    
+    // picking a photo
     @IBAction func selectPhoto(_ sender: UIButton) {
         if !photoPicked {
             pickPhoto()
@@ -135,14 +137,10 @@ class NoteDetail: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
-    
-    //Fixme picker doesnt work
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print("here")
         if let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            print("heee \(chosenImage)")
-//            noteImage.isHidden = true
-            noteImage.imageView?.image = chosenImage
+            noteImage.setImage(chosenImage, for: UIControlState.normal)
             noteImage.imageView?.setNeedsDisplay()
         }
         dismiss(animated:true, completion: nil)

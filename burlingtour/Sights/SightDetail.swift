@@ -31,7 +31,7 @@ class SightDetail: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if var favorites: [Sight] = NSKeyedUnarchiver.unarchiveObject(withFile: self.getFavoritePath()) as? [Sight] {
+        if let favorites: [Sight] = NSKeyedUnarchiver.unarchiveObject(withFile: self.getFavoritePath()) as? [Sight] {
             self.favoriteSights = favorites
             if favoriteSights.first(where: {$0.name == sight.name}) != nil {
                 navigationItem.rightBarButtonItem = UIBarButtonItem(title: "UnFavorite", style: .plain, target: self, action: #selector(unfavorite))
@@ -69,9 +69,5 @@ class SightDetail: UIViewController {
         self.favoriteSights = self.favoriteSights.filter {$0.name != sight.name}
         NSKeyedArchiver.archiveRootObject(self.favoriteSights, toFile: self.getFavoritePath())
         self.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 }

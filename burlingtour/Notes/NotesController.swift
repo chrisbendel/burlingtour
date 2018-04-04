@@ -3,6 +3,7 @@ import UIKit
 class NotesController: UITableViewController {
     var notes = [Note]()
     
+    // Find where our notes are
     func getNotesPath() -> String {
         var filePath: String {
             let manager = FileManager.default
@@ -13,29 +14,31 @@ class NotesController: UITableViewController {
         return filePath
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    // Load notes, or nothing
+    func loadNotes() {
         if let notes: [Note] = NSKeyedUnarchiver.unarchiveObject(withFile: self.getNotesPath()) as? [Note] {
             self.notes = notes
         } else {
             self.notes = [Note]()
             NSKeyedArchiver.archiveRootObject(self.notes, toFile: self.getNotesPath())
         }
+    }
+    
+    // refresh
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadNotes()
         self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let notes: [Note] = NSKeyedUnarchiver.unarchiveObject(withFile: self.getNotesPath()) as? [Note] {
-            self.notes = notes
-        } else {
-            self.notes = [Note]()
-            NSKeyedArchiver.archiveRootObject(self.notes, toFile: self.getNotesPath())
-        }
-        
+        loadNotes()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    // Table View things~
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -69,10 +72,13 @@ class NotesController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    // Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (!self.tableView.isEditing) {
             if let editNote = segue.destination as? NoteDetail, let indexPath = tableView.indexPathForSelectedRow {
-                print("hey sent!")
+                // the noteDetail has 2 states, if we are viewing/editing a note then you must give it a note
+                // then you must give it a note and tell it that its in editing mode, otherwise
+                // it will just assume its a new note
                 editNote.note = notes[indexPath.row]
                 editNote.editMode = true
             }

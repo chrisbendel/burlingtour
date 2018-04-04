@@ -6,16 +6,18 @@ class TourDetail: UIViewController {
 
     var player: AVPlayer!
     var favoriteTours: [Tour]!
+    var tour: Tour!
+    
     @IBOutlet weak var play: UIButton!
     @IBOutlet weak var desc: UILabel!
-    var tour: Tour!
-
+    
+    // load and detect favorites
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = tour.name
         self.desc.text = tour.desc
         
-        if var favorites: [Tour] = NSKeyedUnarchiver.unarchiveObject(withFile: self.getFavoritePath()) as? [Tour] {
+        if let favorites: [Tour] = NSKeyedUnarchiver.unarchiveObject(withFile: self.getFavoritePath()) as? [Tour] {
             self.favoriteTours = favorites
             if favoriteTours.first(where: {$0.name == tour.name}) != nil {
                 navigationItem.rightBarButtonItem = UIBarButtonItem(title: "UnFavorite", style: .plain, target: self, action: #selector(unfavorite))
@@ -27,11 +29,8 @@ class TourDetail: UIViewController {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(favorite))
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
+    // favorite buttons funcs
     @objc func favorite() {
         self.favoriteTours.append(tour)
         NSKeyedArchiver.archiveRootObject(self.favoriteTours, toFile: self.getFavoritePath())
@@ -55,6 +54,7 @@ class TourDetail: UIViewController {
         return filePath
     }
     
+    // Media
     @IBAction func playMedia(_ sender: Any) {
         let player = AVPlayer(url: URL(string: tour.url)!)
         let playerViewController = AVPlayerViewController()
